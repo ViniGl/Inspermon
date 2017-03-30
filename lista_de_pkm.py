@@ -5,11 +5,11 @@ with open("pkm.txt", "r") as arquivo:
 	for linha in arquivo :
 		lista_de_nomes.append(linha)	
 lista1=(lista_de_nomes)
-listanova=[]
+pokemon=[]
 x=0
-print(lista1)
 while x<len(lista1):
 	itens=lista1[x].split()
-	listanova.append(itens)
+	pokemon.append(itens)
 	x=x+1
-	print(itens)
+
+
