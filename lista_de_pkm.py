@@ -7,7 +7,6 @@ with open("pkm.txt", "r") as arquivo:
 lista1=(lista_de_nomes)
 listanova=[]
 x=0
-print(lista1)
 while x<len(lista1):
 	itens=lista1[x].split()
 	listanova.append(itens)
