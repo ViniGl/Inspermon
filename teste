@@ -1,0 +1,4 @@
+import inventario.py as inventario
+import pickle
+with open("inventario.pickle","rb") as inv:
+	
