@@ -4,10 +4,10 @@
 from lista_de_pkm import pokemon as pkm
 from lutas import engine_luta
 import os 
-from lutas import pokemon_lutador
+import time
 
 os.system('cls')
-pokemons_capturados=[pkm[0],pkm[3],pkm[6]]
+pokemons_capturados=[pkm[0],pkm[3],pkm[6],pkm[20],pkm[12]]
 x=1
 escolhab=False
 pokemonb=False
@@ -21,31 +21,41 @@ while escolhab==False:
 			x+=1
 		while pokemonb==False:
 			pokemon_escolhido=int(input("Escolha seu Pokemon: "))
-			a=list(pokemons_capturados[pokemon_escolhido-1])
-			pokemon_lutador(a)
 			os.system('cls')
-			if pokemon_escolhido<= len(pokemons_capturados):
+			if pokemon_escolhido <= len(pokemons_capturados):
+				a=(pokemons_capturados[pokemon_escolhido-1])
 				if pokemon_escolhido==1:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
+					engine_luta(a)
 				elif pokemon_escolhido==2:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
+					engine_luta(a)
 				elif pokemon_escolhido==3:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
+					engine_luta(a)
 				elif pokemon_escolhido==4:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
+					engine_luta(a)
 				elif pokemon_escolhido==5:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
+					engine_luta(a)
 				elif pokemon_escolhido==6:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
+					time.sleep(1)
 					pokemonb=True
-				engine_luta(pokemon_escolhido)
+					engine_luta(a)	
 			else:
-				pokemonb=False
+				pokemonb=False					
 		escolhab=True
 	elif escolha == "dormir":
 		print("dormir")

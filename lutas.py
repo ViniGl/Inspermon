@@ -4,36 +4,37 @@ import random
 import os 
 #Falta o level
 def engine_luta(pokemon_escolhido):
-	vida_jogador=pokemon_escolhido[0]
-	ataque_jogador=pokemon_escolhido[1]
-	defesa_jogador=pokemon_escolhido[2]
+	nome_pkm=pokemon_escolhido[0]
+	vida_jogador=int((pokemon_escolhido[1]))
+	ataque_jogador=int((pokemon_escolhido[2]))
+	defesa_jogador=int((pokemon_escolhido[3]))
 	vida_cpu=int(pkm[6][1])
 	defesa_cpu=int(pkm[6][2])
 	ataque_cpu=int(pkm[6][3])
 	level=1
 	while vida_jogador>0 or vida_cpu>0:
 		os.system('cls')
-		print (vida_jogador)
-		print(vida_cpu)
+		print("{}:{}".format(nome_pkm,vida_jogador))
+		print('Cpu:{}'.format(vida_cpu))
 		escolha=input('Lutar ou fugir:')
 		os.system('cls')
-		print (vida_jogador)
+		print("{}:{}".format(nome_pkm,vida_jogador))
 		print(vida_cpu)
 		while escolha !='lutar' and escolha!='fugir':
 			escolha=input('Lutar ou fugir?')
 			os.system('cls')
-			print (vida_jogador)
+			print("{}:{}".format(nome_pkm,vida_jogador))
 			print(vida_cpu)
 		escolha.lower()
 		if escolha=='lutar':
 			escolha_atk=input('Escolha seu ataque(1 a 4):')
 			os.system('cls')
-			print (vida_jogador)
+			print("{}:{}".format(nome_pkm,vida_jogador))
 			print(vida_cpu)
 			while escolha_atk!='1' and escolha_atk!='2' and escolha_atk!='3'and escolha_atk!='4':
 					escolha_atk=input('Escolha seu ataque(1 a 4):')
 					os.system('cls')
-					print (vida_jogador)
+					print("{}:{}".format(nome_pkm,vida_jogador))
 					print(vida_cpu)
 			if escolha_atk=='1':
 				escolha_atk=pkm[0][4]
@@ -58,3 +59,11 @@ def engine_luta(pokemon_escolhido):
 			os.system('cls')
 			print('Voce fugiu')
 			break
+
+		
+
+
+
+
+
+
