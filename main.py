@@ -2,6 +2,7 @@
 # jogar=int(input("Se quiser jogar digite 0 se quiser resetar 1"))
 # reset_save(jogar)
 from lista_de_pkm import pokemon
+from lutas import engine_luta
 pokemons_capturados=[pokemon[0],pokemon[1],pokemon[2]]
 x=1
 escolhab=False
@@ -34,6 +35,7 @@ while escolhab==False:
 				elif a==6:
 					print("{} foi escolhido".format(pokemons_capturados[a-1][0]))
 					pokemonb=True
+				engine_luta()
 			else:
 				pokemonb=False
 		escolhab=True
