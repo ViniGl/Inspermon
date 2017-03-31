@@ -1,4 +1,13 @@
-import inventario.py as inventario
-import pickle
-with open("inventario.pickle","rb") as inv:
-	
+from lista_de_pkm import pokemon as pkm
+pokemons_capturados=[pkm[0],pkm[3],pkm[6]]	
+pokemon_escolhido=int(input("Escolha seu Pokemon: "))
+a=list(pokemons_capturados[pokemon_escolhido-1])
+pokemon_lutador(a)
+pokemons_capturados=[pkm[0],pkm[3],pkm[6]]
+
+def pokemon_lutador(pokemon_escolhido):
+	vida_jogador=pokemon_escolhido[1]
+	ataque_jogador=pokemon_escolhido[2]
+	defesa_jogador=pokemon_escolhido[3]
+	return vida_jogador, ataque_jogador,defesa_jogador
+print (pokemon_lutador(a)[0])
