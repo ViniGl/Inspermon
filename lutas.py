@@ -1,12 +1,13 @@
 from lista_de_pkm import pokemon as pkm
 from ataques import ataques
+from ataques import pokemon_lutador
 import random
 import os 
 #Falta o level
 def engine_luta():
-	vida_jogador=int(pkm[0][1])				#Vida, atk e defesa serao escolhidos a partir do pokemon selecionado
-	ataque_jogador=int(pkm[0][2])
-	defesa_jogador=int(pkm[0][3])
+	vida_jogador=pkm[pokemon_escolhido-1][1]
+	ataque_jogador=pkm[pokemon_escolhido-1][2]
+	defesa_jogador=pkm[pokemon_escolhido-1][3]
 	vida_cpu=int(pkm[6][1])
 	defesa_cpu=int(pkm[6][2])
 	ataque_cpu=int(pkm[6][3])
@@ -58,4 +59,3 @@ def engine_luta():
 			os.system('cls')
 			print('Voce fugiu')
 			break
-engine_luta()
