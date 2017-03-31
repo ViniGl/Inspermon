@@ -16,13 +16,25 @@ def engine_luta():
 		print (vida_jogador)
 		print(vida_cpu)
 		escolha=input('Lutar ou fugir:')
+		os.system('cls')
+		print (vida_jogador)
+		print(vida_cpu)
 		while escolha !='lutar' and escolha!='fugir':
 			escolha=input('Lutar ou fugir?')
+			os.system('cls')
+			print (vida_jogador)
+			print(vida_cpu)
 		escolha.lower()
 		if escolha=='lutar':
 			escolha_atk=input('Escolha seu ataque(1 a 4):')
+			os.system('cls')
+			print (vida_jogador)
+			print(vida_cpu)
 			while escolha_atk!='1' and escolha_atk!='2' and escolha_atk!='3'and escolha_atk!='4':
 					escolha_atk=input('Escolha seu ataque(1 a 4):')
+					os.system('cls')
+					print (vida_jogador)
+					print(vida_cpu)
 			if escolha_atk=='1':
 				escolha_atk=ataques()[0]
 			elif escolha_atk=='2':
@@ -35,12 +47,15 @@ def engine_luta():
 			vida_cpu=vida_cpu-int(((((2*level/5)+2)*escolha_atk*(ataque_jogador/defesa_cpu)+2)/50))					#Equacao de dano 
 			vida_jogador=vida_jogador-int(((((2*level/5)+2)*escolha_atk_cpu*(ataque_cpu/defesa_jogador)+2)/50))
 			if vida_cpu<=0:
+				os.system('cls')
 				print('Jogador venceu!')
 				break
 			if vida_jogador<=0:
+				os.system('cls')
 				print('Cpu venceu!')
 				break
 		if escolha=='fugir':
+			os.system('cls')
 			print('Voce fugiu')
 			break
 engine_luta()
