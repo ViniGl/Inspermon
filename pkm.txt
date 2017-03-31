@@ -26,10 +26,10 @@ Pikachu 	35	55	40
 Raichu 		60	90	55
 Sandshrew 	50	75	85
 Sandslash 	75	100	110
-Nidoran? 	55	47	52
+Nidoran(F)	55	47	52
 Nidorina 	70	62	67
 Nidoqueen 	90	92	87
-Nidoran? 	46	57	40
+Nidoran(M)	46	57	40
 Nidorino 	61	72	57
 Nidoking 	81	102	77
 Clefairy 	70	45	48
