@@ -1,15 +1,15 @@
-Lutas + captura
+Lutas + captura-
 
-Inventario(Itens de cura, pokebolas e pokemons capturados)
+Inventario(Itens de cura, pokebolas e pokemons capturados)-
 
-Status pokemons
+Status pokemons-
 
-Leveling + evolucao
+Leveling + evolucao-Feito
 
-Healing
-
-
-Main(juntar os codigos)
+Healing-
 
 
-Detalhes
+Main(juntar os codigos)-
+
+
+Detalhes-
