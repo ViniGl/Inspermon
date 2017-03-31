@@ -1,13 +1,18 @@
 from lista_de_pkm import pokemon as pkm
 from ataques import ataques
-from ataques import pokemon_lutador
 import random
 import os 
 #Falta o level
-def engine_luta():
-	vida_jogador=pkm[pokemon_escolhido-1][1]
-	ataque_jogador=pkm[pokemon_escolhido-1][2]
-	defesa_jogador=pkm[pokemon_escolhido-1][3]
+def pokemon_lutador(pokemon_escolhido):
+	vida_jogador=pokemon_escolhido[1]
+	ataque_jogador=pokemon_escolhido[2]
+	defesa_jogador=pokemon_escolhido[3]
+	return vida_jogador, ataque_jogador,defesa_jogador
+
+def engine_luta(pokemon_escolhido):
+	vida_jogador=int(pokemon_lutador(pokemon_escolhido)[0])
+	ataque_jogador=int(pokemon_lutador(pokemon_escolhido)[1])
+	defesa_jogador=int(pokemon_lutador(pokemon_escolhido)[2])
 	vida_cpu=int(pkm[6][1])
 	defesa_cpu=int(pkm[6][2])
 	ataque_cpu=int(pkm[6][3])
