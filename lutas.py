@@ -19,23 +19,23 @@ def engine_luta(pokemon_escolhido):
 		escolha=input('Lutar ou fugir:')
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
-		print(vida_cpu)
+		print('Cpu:{}'.format(vida_cpu))
 		while escolha !='lutar' and escolha!='fugir':
 			escolha=input('Lutar ou fugir?')
 			os.system('cls')
 			print("{}:{}".format(nome_pkm,vida_jogador))
-			print(vida_cpu)
+			print('Cpu:{}'.format(vida_cpu))
 		escolha.lower()
 		if escolha=='lutar':
 			escolha_atk=input('Escolha seu ataque(1 a 4):')
 			os.system('cls')
 			print("{}:{}".format(nome_pkm,vida_jogador))
-			print(vida_cpu)
+			print('Cpu:{}'.format(vida_cpu))
 			while escolha_atk!='1' and escolha_atk!='2' and escolha_atk!='3'and escolha_atk!='4':
 					escolha_atk=input('Escolha seu ataque(1 a 4):')
 					os.system('cls')
 					print("{}:{}".format(nome_pkm,vida_jogador))
-					print(vida_cpu)
+					print('Cpu:{}'.format(vida_cpu))
 			if escolha_atk=='1':
 				escolha_atk=pkm[0][4]
 			elif escolha_atk=='2':
