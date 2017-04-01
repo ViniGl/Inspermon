@@ -7,12 +7,17 @@ def engine_luta(pokemon_escolhido):
 	nome_pkm=pokemon_escolhido[0]
 	vida_jogador=int((pokemon_escolhido[1]))
 	ataque_jogador=int((pokemon_escolhido[2]))
+	ataque1=pokemon_escolhido[6]
+	ataque2=pokemon_escolhido[7]
+	ataque3=pokemon_escolhido[8]
+	ataque4=pokemon_escolhido[9]
 	defesa_jogador=int((pokemon_escolhido[3]))
 	vida_cpu=int(pkm[6][1])
 	defesa_cpu=int(pkm[6][2])
 	ataque_cpu=int(pkm[6][3])
 	level=1
 	while vida_jogador>0 or vida_cpu>0:
+		ataques()
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
 		print('Cpu:{}'.format(vida_cpu))
@@ -27,7 +32,7 @@ def engine_luta(pokemon_escolhido):
 			print('Cpu:{}'.format(vida_cpu))
 		escolha.lower()
 		if escolha=='lutar':
-			escolha_atk=input('Escolha seu ataque(1 a 4):')
+			escolha_atk=input('Escolha seu ataque:\n{}\n{}\n{}\n{}'.format(ataque1,ataque2,ataque3,ataque4))
 			os.system('cls')
 			print("{}:{}".format(nome_pkm,vida_jogador))
 			print('Cpu:{}'.format(vida_cpu))
