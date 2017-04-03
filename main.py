@@ -5,7 +5,6 @@ from lista_de_pkm import pokemon as pkm
 from lutas import engine_luta
 import os 
 import time
-
 os.system('cls')
 pokemons_capturados=[pkm[0],pkm[3],pkm[6],pkm[20],pkm[12]]
 x=1
@@ -53,12 +52,12 @@ while escolhab==False:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
-					engine_luta(a)	
+					engine_luta(a)
 			else:
 				pokemonb=False					
 		escolhab=True
 	elif escolha == "dormir":
-		print("dormir")
+		print("Boa noite!")
 		escolhab=True
 	else:
 		escolhab=False
