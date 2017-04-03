@@ -11,10 +11,12 @@ x=1
 escolhab=False
 pokemonb=False
 while escolhab==False:
+	pokemonb=False
 	oquefazer=input("O que voce deseja fazer, dormir ou andar?")
 	os.system('cls')
 	escolha=oquefazer.lower()
 	if escolha == "andar":
+		x=1
 		for i in pokemons_capturados:
 			print(i[0] + " ""(""{}""" ")".format(x))
 			x+=1
@@ -52,12 +54,13 @@ while escolhab==False:
 					print("{} foi escolhido".format(pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
-					engine_luta(a)
 			else:
 				pokemonb=False					
-		escolhab=True
+		escolhab=False
 	elif escolha == "dormir":
 		print("Boa noite!")
+		time.sleep(1)
+		os.system('cls')
 		escolhab=True
 	else:
 		escolhab=False
