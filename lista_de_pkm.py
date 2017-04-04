@@ -1,6 +1,6 @@
 #Lista stats de cada pokemon
-#Ordem:Nome[0], Hp[1], Atk[2], Def[3],Type[4], Evolucao[5],Ataque1[6],ataque2[7],ataque3[8],ataque4[9]
-with open("pkm.txt", "r") as arquivo:
+#Ordem:Nome[0], Hp[1],Hp_temp[2], Atk[3], Def[4],Type[5], Evolucao[6],Ataque1[7],ataque2[8],ataque3[9],ataque4[10]
+with open("pkm1.txt", "r") as arquivo:
 	lista_de_nomes=[]
 	for linha in arquivo :
 		lista_de_nomes.append(linha)	

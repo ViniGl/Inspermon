@@ -7,17 +7,16 @@ import time
 #Falta o level
 def engine_luta(pokemon_escolhido):
 	#Parametros
+	ataques()
 	pokemon_cpu=random.choice(pkm)
 	level=1
 	nome_pkm=pokemon_escolhido[0]
-	vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
-	ataque_jogador=int((pokemon_escolhido[2]))
-	defesa_jogador=int((pokemon_escolhido[3]))
-	ataque1=pokemon_escolhido[6]
-	ataque2=pokemon_escolhido[7]
-	ataque3=pokemon_escolhido[8]
-	ataque4=pokemon_escolhido[9]
-	pkm_cpu=CPU(pokemon_cpu)[1]
+	if pokemon_escolhido[2]<pokemon_escolhido[1]:
+		vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
+	else:
+		vida_jogador=pokemon_escolhido[2]
+	ataque_jogador=int((pokemon_escolhido[3]))
+	defesa_jogador=int((pokemon_escolhido[4]))
 	vida_cpu=int(CPU(pokemon_cpu)[2])
 	defesa_cpu=int(CPU(pokemon_cpu)[4])
 	ataque_cpu=int(CPU(pokemon_cpu)[3])
@@ -25,7 +24,6 @@ def engine_luta(pokemon_escolhido):
 
 	#Loop da luta
 	while vida_jogador>0 or vida_cpu>0:
-		ataques()
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
 		print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
@@ -51,29 +49,27 @@ def engine_luta(pokemon_escolhido):
 					print("{}:{}".format(nome_pkm,vida_jogador))
 					print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
 			if escolha_atk=='1':
-				escolha_atk=pokemon_escolhido[6]
-			elif escolha_atk=='2':
 				escolha_atk=pokemon_escolhido[7]
-			elif escolha_atk=='3':
+			elif escolha_atk=='2':
 				escolha_atk=pokemon_escolhido[8]
-			elif escolha_atk=='4':
+			elif escolha_atk=='3':
 				escolha_atk=pokemon_escolhido[9]
+			elif escolha_atk=='4':
+				escolha_atk=pokemon_escolhido[10]
 			escolha_atk_cpu=random.choice(CPU(pokemon_cpu)[5:8])
+			#Equacoes de dano
 			vida_cpu=int(vida_cpu-(((((2*level/5)+2)*escolha_atk*(ataque_jogador/defesa_cpu))+2)/50))
 			vida_jogador=int(vida_jogador-((((2*level/5)+2)*escolha_atk_cpu*(ataque_cpu/defesa_jogador)+2)/50))
-			
-	
-
-		
-			
 			#Fim da luta
 			if vida_cpu<=0:
+				pokemon_escolhido[2]=vida_jogador
 				os.system('cls')
 				print('Jogador venceu!')
 				time.sleep(1)
 				os.system('cls')
 				break
 			if vida_jogador<=0:
+				pokemon_escolhido[2]=vida_jogador
 				os.system('cls')
 				print('Cpu venceu!')
 				time.sleep(1)

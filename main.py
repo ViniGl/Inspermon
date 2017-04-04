@@ -7,7 +7,7 @@ import os
 import time
 from inventario import inventario
 from Pokecenter import pokecenter
-
+import random
 #Saves
 os.system('cls')
 class nomes_salvos:
@@ -49,43 +49,49 @@ while escolhab==False:
 	os.system('cls')
 	escolha=oquefazer.lower()
 	if escolha == "andar":
-		x=1
-		for i in inventario.pokemons_capturados:
-			print(i[0] + " ""(""{}""" ")".format(x))
-			x+=1
 		while pokemonb==False:
+			x=1
+			for i in inventario.pokemons_capturados:
+				print(i[0] + " ""(""{}""" ")".format(x))
+				x+=1
 			pokemon_escolhido=int(input("Escolha seu Pokemon: "))
 			os.system('cls')
 			if pokemon_escolhido <= len(inventario.pokemons_capturados):
+				chance=random.randint(0,100)
 				a=(inventario.pokemons_capturados[pokemon_escolhido-1])
-				if pokemon_escolhido==1:
+				if pokemon_escolhido==1 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
 					engine_luta(a)
-				elif pokemon_escolhido==2:
+				elif pokemon_escolhido==2 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
 					engine_luta(a)
-				elif pokemon_escolhido==3:
+				elif pokemon_escolhido==3 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
 					engine_luta(a)
-				elif pokemon_escolhido==4:
+				elif pokemon_escolhido==4 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
 					engine_luta(a)
-				elif pokemon_escolhido==5:
+				elif pokemon_escolhido==5 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
 					engine_luta(a)
-				elif pokemon_escolhido==6:
+				elif pokemon_escolhido==6 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
+					pokemonb=True
+				else:
+					print('Nenhum pokemon encontrado')
+					time.sleep(1.3)
+					os.system('cls')
 					pokemonb=True
 			else:
 				pokemonb=False					

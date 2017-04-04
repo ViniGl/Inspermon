@@ -1,0 +1,4 @@
+import random
+from lista_de_pkm import pokemon as pkm
+a=random.choice(pkm)
+print(a)
