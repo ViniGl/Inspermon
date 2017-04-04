@@ -1,6 +1,0 @@
-import random
-from lista_de_pkm import pokemon as pkm
-pokemons_capturados=[pkm[0],pkm[3],pkm[6],pkm[20],pkm[12]]
-a=random.sample(pokemons_capturados,2)
-
-print(a)

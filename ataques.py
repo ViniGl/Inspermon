@@ -39,6 +39,7 @@ def ataques():
 		quick_attack=40#23
 		return cut,egg_bomb,mega_punch,quick_attack
 
+	#Golpes para cada pokemon
 	for i in range(len(pkm)):
 		if pkm[i][4]=='fogo' and pkm[i][5]=='ev1' and len(pkm[i])<10:
 			a=random.sample(fogo(),2)
