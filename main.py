@@ -6,13 +6,25 @@ from lutas import engine_luta
 import os 
 import time
 os.system('cls')
+
+nome_jogador1=input("Qual o seu nome treinador pokemon? ")
+nome_jogador=nome_jogador1.title()
+time.sleep(2)
+os.system('cls')
+print("Seja Bem Vindo {}, pronto para se tornar o treinador pokemon mais respeitado da historia?".format(nome_jogador))
+time.sleep(4)
+print("Agora vamos comecar a nossa dura jornada pelo mundo dos InsperMons!")
+time.sleep(4)
+os.system('cls')
+
+
 pokemons_capturados=[pkm[0],pkm[3],pkm[6],pkm[20],pkm[12]]
 x=1
 escolhab=False
 pokemonb=False
 while escolhab==False:
 	pokemonb=False
-	oquefazer=input("O que voce deseja fazer, dormir ou andar?")
+	oquefazer=input("{} o que voce gostaria fazer, dormir ou andar?".format(nome_jogador))
 	os.system('cls')
 	escolha=oquefazer.lower()
 	if escolha == "andar":
