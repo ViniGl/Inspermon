@@ -2,9 +2,9 @@
 from lista_de_pkm import pokemon as pkm
 import random
 from ataques import ataques
-def CPU():
+def CPU(pokemon_cpu):
 	ataques()
-	pokemon_cpu=random.choice(pkm)
+	pokemon_cpu=pokemon_cpu
 	level_cpu=1
 	nome_cpu=pokemon_cpu[0]
 	hp_cpu=(((int(pokemon_cpu[1])*2)*level_cpu)/100)+level_cpu+10
