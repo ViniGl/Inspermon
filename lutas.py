@@ -11,7 +11,7 @@ def engine_luta(pokemon_escolhido):
 	pokemon_cpu=random.choice(pkm)
 	level=1
 	nome_pkm=pokemon_escolhido[0]
-	if pokemon_escolhido[2]<pokemon_escolhido[1]:
+	if int(pokemon_escolhido[2])<int(pokemon_escolhido[1]):
 		vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
 	else:
 		vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
