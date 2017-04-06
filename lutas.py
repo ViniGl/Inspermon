@@ -14,7 +14,7 @@ def engine_luta(pokemon_escolhido):
 	if pokemon_escolhido[2]<pokemon_escolhido[1]:
 		vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
 	else:
-		vida_jogador=int(pokemon_escolhido[2])
+		vida_jogador=int((((int(pokemon_escolhido[1])*2*level)/100))+level+10)
 	ataque_jogador=int((pokemon_escolhido[3]))
 	defesa_jogador=int((pokemon_escolhido[4]))
 	vida_cpu=int(CPU(pokemon_cpu)[2])
