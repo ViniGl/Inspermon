@@ -9,23 +9,32 @@ from inventario import inventario
 from Pokecenter import pokecenter
 import random
 #Saves
+
 os.system('cls')
 class nomes_salvos:
 	jogadores_totais=0
 	def jogadores(self,jogadores):
 		self.jogadores=jogadores
 		nomes_salvos.jogadores_totais+=1
+import pygame
+from tkinter import *
+file = 'pkmsong1.mp3'
+root = Tk()
+pygame.init()
+pygame.mixer.init()
+pygame.mixer.music.load(file)
+pygame.mixer.music.play()
+root.mainloop()
 
-#Introducao
-# nome_jogador=input("Qual o seu nome treinador pokemon? ")
-# nome_jogador1=nome_jogador.title()
-# os.system('cls')
-# print("Seja Bem Vindo {}, pronto para se tornar o treinador pokemon mais respeitado da historia?".format(nome_jogador1))
-# time.sleep(4)
-# os.system('cls')
-# print("Agora vamos comecar a nossa dura jornada pelo mundo dos InsperMons!")
-# time.sleep(4)
-# os.system('cls')
+nome_jogador=input("Qual o seu nome treinador pokemon? ")
+nome_jogador1=nome_jogador.title()
+os.system('cls')
+print("Seja Bem Vindo {}, pronto para se tornar o treinador pokemon mais respeitado da historia?".format(nome_jogador1))
+time.sleep(4)
+os.system('cls')
+print("Agora vamos comecar a nossa dura jornada pelo mundo dos InsperMons!")
+time.sleep(4)
+os.system('cls')
 print ('{}  (1)\n{}  (2)\n{}  (3)' .format(pkm[0][0],pkm[3][0],pkm[6][0]))
 pokemon_inicial=int(input('Escolha seu primeiro pokemon:'))
 if pokemon_inicial==1:
