@@ -85,6 +85,7 @@ def engine_luta(pokemon_lutador):
 		if escolha=='capturar':
 			a=random.randrange(0,100,1)
 			if a<=20 and a>=0:
+				os.system('cls')
 				inventario.pokemons_capturados.append(pokemon_cpu)
 				print("{} esta tentando escapar".format(pokemon_cpu[0]))
 				time.sleep(2)
@@ -96,10 +97,12 @@ def engine_luta(pokemon_lutador):
 				time.sleep(2)
 				os.system('cls')
 				print("Voce Capturou {} ! Parabens!!!".format(pokemon_cpu[0]))
+				inventario.pokebolas=inventario.pokebolas-1
 				time.sleep(3)
 				os.system('cls')
 				break
 			if a>20 and a<=55:
+				os.system('cls')
 				print("{} esta tentando escapar".format(pokemon_cpu[0]))
 				time.sleep(2)
 				os.system('cls')
@@ -110,9 +113,11 @@ def engine_luta(pokemon_lutador):
 				time.sleep(2)
 				os.system('cls')
 				print("{} escapou da pokebola! Mas continua na luta!".format(pokemon_cpu[0]))
+				inventario.pokebolas=inventario.pokebolas-1
 				time.sleep(3)
 				os.system('cls')
 			else:
+				os.system('cls')
 				print("{} esta tentando escapar".format(pokemon_cpu[0]))
 				time.sleep(2)
 				os.system('cls')
@@ -123,6 +128,7 @@ def engine_luta(pokemon_lutador):
 				time.sleep(2)
 				os.system('cls')
 				print("{} escapou da pokebola! E fugiu da luta".format(pokemon_cpu[0]))
+				inventario.pokebolas=inventario.pokebolas-1
 				time.sleep(3)
 				os.system('cls')
 				break
