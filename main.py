@@ -8,6 +8,8 @@ import time
 from inventario import inventario
 from Pokecenter import pokecenter
 import random
+import pygame
+from tkinter import *
 #Saves
 
 os.system('cls')
@@ -16,8 +18,6 @@ class nomes_salvos:
 	def jogadores(self,jogadores):
 		self.jogadores=jogadores
 		nomes_salvos.jogadores_totais+=1
-import pygame
-from tkinter import *
 file = 'pkmsong1.mp3'
 root = Tk()
 pygame.init()
