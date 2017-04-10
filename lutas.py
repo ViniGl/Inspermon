@@ -4,6 +4,8 @@ import random
 from CPU import CPU
 import os 
 import time
+from inventario import inventario
+
 #Falta o level
 def engine_luta(pokemon_lutador):
 	#Parametros
@@ -24,12 +26,12 @@ def engine_luta(pokemon_lutador):
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
 		print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
-		escolha=input('Lutar ou fugir:')
+		escolha=input('Lutar, fugir ou capturar:').lower()
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
 		print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
-		while escolha !='lutar' and escolha!='fugir':
-			escolha=input('Lutar ou fugir?')
+		while escolha !='lutar' and escolha!='fugir' and escolha!='capturar':
+			escolha=input('Lutar, fugir ou capturar?')
 			os.system('cls')
 			print("{}:{}".format(nome_pkm,vida_jogador))
 			print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
@@ -80,6 +82,50 @@ def engine_luta(pokemon_lutador):
 			time.sleep(1)
 			os.system('cls')
 			break
+		if escolha=='capturar':
+			a=random.randrange(0,100,1)
+			if a<=20 and a>=0:
+				inventario.pokemons_capturados.append(pokemon_cpu)
+				print("{} esta tentando escapar".format(pokemon_cpu[0]))
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print("Voce Capturou {} ! Parabens!!!".format(pokemon_cpu[0]))
+				time.sleep(3)
+				os.system('cls')
+				break
+			if a>20 and a<=55:
+				print("{} esta tentando escapar".format(pokemon_cpu[0]))
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print("{} escapou da pokebola! Mas continua na luta!".format(pokemon_cpu[0]))
+				time.sleep(3)
+				os.system('cls')
+			else:
+				print("{} esta tentando escapar".format(pokemon_cpu[0]))
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print(". . .")
+				time.sleep(2)
+				os.system('cls')
+				print("{} escapou da pokebola! E fugiu da luta".format(pokemon_cpu[0]))
+				time.sleep(3)
+				os.system('cls')
+				break
 
 		
 

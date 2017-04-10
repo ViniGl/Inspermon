@@ -20,7 +20,6 @@ class nomes_salvos:
 		nomes_salvos.jogadores_totais+=1
 file = 'pkmsong1.mp3'
 root = Tk()
-pygame.init()
 pygame.mixer.init()
 pygame.mixer.music.load(file)
 pygame.mixer.music.play()
@@ -45,6 +44,7 @@ elif pokemon_inicial==3:
 	pokemon_inicial=6
 inventario.pokemons_capturados.append(pkm[pokemon_inicial])
 inventario.pokebolas=7
+pokebolas_atuais=7
 os.system('cls')
 
 #Loop da parte principal
