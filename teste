@@ -1,5 +1,5 @@
-lista=[1,2,3,4,5]
-lista.insert(0,0)
-print (lista)
-lista.pop(2)
-print(lista)
+class a:
+	a=input("a")
+
+a.a
+print (a.a)	

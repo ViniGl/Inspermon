@@ -8,16 +8,18 @@ import time
 from inventario import inventario
 from Pokecenter import pokecenter
 import random
+import pickle
 import pygame
 from tkinter import *
+#Pickle vida temp
 #Saves
-
 os.system('cls')
 class nomes_salvos:
 	jogadores_totais=0
 	def jogadores(self,jogadores):
 		self.jogadores=jogadores
 		nomes_salvos.jogadores_totais+=1
+#musica		
 file = 'pkmsong1.mp3'
 root = Tk()
 pygame.mixer.init()
@@ -44,7 +46,6 @@ elif pokemon_inicial==3:
 	pokemon_inicial=6
 inventario.pokemons_capturados.append(pkm[pokemon_inicial])
 inventario.pokebolas=7
-pokebolas_atuais=7
 os.system('cls')
 
 #Loop da parte principal
@@ -53,8 +54,7 @@ escolhab=False
 pokemonb=False
 while escolhab==False:
 	pokemonb=False
-	#oquefazer=input("{} o que voce gostaria fazer, andar, pokecenter,status ou dormir?".format(nome_jogador1))
-	oquefazer=input(" o que voce gostaria fazer, andar, pokecenter,status ou dormir?")
+	oquefazer=input("{}, o que voce gostaria fazer? Andar, pokecenter, status ou dormir?".format(nome_jogador1))
 	os.system('cls')
 	escolha=oquefazer.lower()
 	if escolha == "andar":

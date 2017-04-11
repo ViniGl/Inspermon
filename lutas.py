@@ -19,6 +19,8 @@ def engine_luta(pokemon_lutador):
 	vida_cpu=int(CPU(pokemon_cpu)[2])
 	defesa_cpu=int(CPU(pokemon_cpu)[4])
 	ataque_cpu=int(CPU(pokemon_cpu)[3])
+	print (pokemon_lutador)
+
 
 
 	#Loop da luta
@@ -78,10 +80,13 @@ def engine_luta(pokemon_lutador):
 				break
 		if escolha=='fugir':
 			os.system('cls')
+			pokemon_lutador.pop(2)
+			pokemon_lutador.insert(2,vida_jogador)
 			print('Voce fugiu')
 			time.sleep(1)
 			os.system('cls')
 			break
+		# Captura
 		if escolha=='capturar':
 			a=random.randrange(0,100,1)
 			if a<=20 and a>=0:
