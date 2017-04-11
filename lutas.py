@@ -7,24 +7,32 @@ import time
 from inventario import inventario
 
 #Falta o level
-def engine_luta(pokemon_lutador):
+def engine_luta(pokemon_lutador,valor_lista):
 	#Parametros
 	ataques()
+	valor_lista=valor_lista
 	pokemon_cpu=random.choice(pkm)
 	level=1
 	nome_pkm=pokemon_lutador[0]
-	vida_jogador=int((((int(pokemon_lutador[2])*2*level)/100))+level+10)
+	if int(inventario.pokemons_capturados[valor_lista-1][2])<=0:
+		vida_jogador=0
+	elif int(inventario.pokemons_capturados[valor_lista-1][2])<int((((int(pokemon_lutador[2])*2*level)/100))+level+10):
+		vida_jogador=int(inventario.pokemons_capturados[valor_lista-1][2])
+	else:	
+		vida_jogador=int((((int(pokemon_lutador[2])*2*level)/100))+level+10)
 	ataque_jogador=int((pokemon_lutador[3]))
 	defesa_jogador=int((pokemon_lutador[4]))
 	vida_cpu=int(CPU(pokemon_cpu)[2])
 	defesa_cpu=int(CPU(pokemon_cpu)[4])
 	ataque_cpu=int(CPU(pokemon_cpu)[3])
-	print (pokemon_lutador)
 
-
-
+	if vida_jogador<=0:
+		os.system('cls')
+		print("Seu {} esta fraco, leve-o paro o pokecenter!".format(nome_pkm))
+		time.sleep(1.5)
+		os.system('cls')
 	#Loop da luta
-	while vida_jogador>0 or vida_cpu>0:
+	while vida_jogador>0 and vida_cpu>0:
 		os.system('cls')
 		print("{}:{}".format(nome_pkm,vida_jogador))
 		print('{}:{}'.format(CPU(pokemon_cpu)[1],vida_cpu))
@@ -63,16 +71,16 @@ def engine_luta(pokemon_lutador):
 			vida_jogador=int(vida_jogador-((((2*level/5)+2)*escolha_atk_cpu*(ataque_cpu/defesa_jogador)+2)/50))
 			#Fim da luta
 			if vida_cpu<=0:
-				pokemon_lutador.pop(2)
-				pokemon_lutador.insert(2,vida_jogador)
+				inventario.pokemons_capturados[valor_lista-1].pop(2)
+				inventario.pokemons_capturados[valor_lista-1].insert(2,vida_jogador)
 				os.system('cls')
 				print('Jogador venceu!')
 				time.sleep(1)
 				os.system('cls')
 				break
 			if vida_jogador<=0:
-				pokemon_lutador.pop(2)
-				pokemon_lutador.insert(2,vida_jogador)
+				inventario.pokemons_capturados[valor_lista-1].pop(2)
+				inventario.pokemons_capturados[valor_lista-1].insert(2,vida_jogador)
 				os.system('cls')
 				print('Cpu venceu!')
 				time.sleep(1)
