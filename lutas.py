@@ -6,7 +6,7 @@ import os
 import time
 from inventario import inventario
 import pygame
-from Levelling import level
+
 #Falta o level
 def engine_luta(pokemon_lutador,valor_lista):
 	#Parametros
@@ -14,7 +14,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 	valor_lista=int(valor_lista)
 	poke_lutador=inventario.pokemons_capturados[valor_lista-1]
 	pokemon_cpu=random.choice(pkm)
-	level=int(pokemon_lutador[1])
+	level=1
 	nome_pkm=pokemon_lutador[0]
 	if int(inventario.pokemons_capturados[valor_lista-1][3])<=0:
 		vida_jogador=0
@@ -77,7 +77,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 				inventario.pokemons_capturados[valor_lista-1].insert(2,vida_jogador)
 				os.system('cls')
 				print('Jogador venceu!')
-				level(poke_lutador)
+				
 				time.sleep(1)
 				pygame.mixer.music.stop()
 				os.system('cls')
@@ -92,9 +92,9 @@ def engine_luta(pokemon_lutador,valor_lista):
 				os.system('cls')
 				break
 		if escolha=='fugir':
-			os.system('cls')
 			inventario.pokemons_capturados[valor_lista-1].pop(2)
 			inventario.pokemons_capturados[valor_lista-1].insert(2,vida_jogador)
+			os.system('cls')
 			print('Voce fugiu')
 			time.sleep(1)
 			pygame.mixer.music.stop()
@@ -104,8 +104,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 		if escolha=='capturar':
 			if inventario.pokebolas<=0:
 				print('Voce nao possui pokebolas')
-				break
-			a=random.randrange(0,100,1)
+			a=random.randrange(0,20,1)
 			if a<=20 and a>=0:
 				os.system('cls')
 				inventario.pokemons_capturados.append(pokemon_cpu)
@@ -122,7 +121,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 				inventario.pokemons_capturados[valor_lista-1].pop(2)
 				inventario.pokemons_capturados[valor_lista-1].insert(2,vida_jogador)
 				inventario.pokebolas=inventario.pokebolas-1
-				level(pokemon_lutador,valor_lista)
+				
 				time.sleep(3)
 				pygame.mixer.music.stop()
 				os.system('cls')

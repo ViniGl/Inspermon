@@ -55,6 +55,7 @@ x=1
 escolhab=False
 pokemonb=False
 while escolhab==False:
+	pygame.mixer.music.unpause()
 	pokemonb=False
 	# oquefazer=input("{}, o que voce gostaria fazer? Andar, pokecenter, status ou dormir?".format(nome_jogador1))
 	oquefazer=input("o que voce gostaria fazer? Andar, pokecenter, status ou dormir?")
