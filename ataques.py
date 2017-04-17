@@ -40,78 +40,78 @@ def ataques():
 		return cut,egg_bomb,mega_punch,quick_attack
 
 	for i in range(len(pkm)):
-		if pkm[i][5]=='fogo' and pkm[i][6]=='ev1' and len(pkm[i])<12:
+		if pkm[i][6]=='fogo' and pkm[i][7]=='ev1' and len(pkm[i])<13:
 			a=random.sample(fogo(),2)
 			b=random.sample(normal(),2)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='agua' and pkm[i][6]=='ev1'and len(pkm[i])<12:
+		if pkm[i][6]=='agua' and pkm[i][7]=='ev1'and len(pkm[i])<13:
 			a=random.sample(agua(),2)
 			b=random.sample(normal(),2)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='luta' and pkm[i][6]=='ev1'and len(pkm[i])<12:
+		if pkm[i][6]=='luta' and pkm[i][7]=='ev1'and len(pkm[i])<13:
 			a=random.sample(luta(),2)
 			b=random.sample(normal(),2)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='grama' and pkm[i][6]=='ev1'and len(pkm[i])<12:
+		if pkm[i][6]=='grama' and pkm[i][7]=='ev1'and len(pkm[i])<13:
 			a=random.sample(grama(),2)
 			b=random.sample(normal(),2)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='eletrico' and pkm[i][6]=='ev1'and len(pkm[i])<12:
+		if pkm[i][6]=='eletrico' and pkm[i][7]=='ev1'and len(pkm[i])<13:
 			a=random.sample(eletrico(),2)
 			b=random.sample(normal(),2)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='normal' and pkm[i][6]=='ev1'and len(pkm[i])<12:
+		if pkm[i][6]=='normal' and pkm[i][7]=='ev1'and len(pkm[i])<13:
 			a=random.sample(normal(),4)
 			c=pkm[i].extend(a)
-		if pkm[i][5]=='fogo' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='fogo' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			a=random.sample(fogo(),3)
 			b=random.sample(normal(),1)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)
-		if pkm[i][5]=='agua' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='agua' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			a=random.sample(agua(),3)
 			b=random.sample(normal(),1)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)	
-		if pkm[i][5]=='eletrico' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='eletrico' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			a=random.sample(eletrico(),3)
 			b=random.sample(normal(),1)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)			
-		if pkm[i][5]=='grama' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='grama' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			a=random.sample(grama(),3)
 			b=random.sample(normal(),1)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)	
-		if pkm[i][5]=='normal' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='normal' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			b=random.sample(normal(),4)
 			c=pkm[i].extend(b)		
-		if pkm[i][5]=='luta' and pkm[i][6]=='ev2'and len(pkm[i])<12:
+		if pkm[i][6]=='luta' and pkm[i][7]=='ev2'and len(pkm[i])<13:
 			a=random.sample(luta(),3)
 			b=random.sample(normal(),1)
 			c=pkm[i].extend(a)
 			d=pkm[i].extend(b)	
-		if pkm[i][5]=='fogo' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='fogo' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(fogo(),4)
 			c=pkm[i].extend(a)	
-		if pkm[i][5]=='luta' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='luta' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(luta(),4)
 			c=pkm[i].extend(a)	
-		if pkm[i][5]=='agua' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='agua' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(agua(),4)
 			c=pkm[i].extend(a)			
-		if pkm[i][5]=='grama' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='grama' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(grama(),4)
 			c=pkm[i].extend(a)
-		if pkm[i][5]=='eletrico' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='eletrico' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(eletrico(),4)
 			c=pkm[i].extend(a)	
-		if pkm[i][5]=='normal' and pkm[i][6]=='ev3'and len(pkm[i])<12:
+		if pkm[i][6]=='normal' and pkm[i][7]=='ev3'and len(pkm[i])<13:
 			a=random.sample(luta(),4)
 			c=pkm[i].extend(a)
 

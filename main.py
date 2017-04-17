@@ -22,6 +22,7 @@ class nomes_salvos:
 
 #musica		
 file = 'pkmsong1.mp3'
+file2='pkmfight.mp3'
 root = Tk()
 pygame.mixer.init()
 pygame.mixer.music.load(file)
@@ -74,26 +75,41 @@ while escolhab==False:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
+					pygame.mixer.music.pause()
+					pygame.mixer.music.load(file2)
+					pygame.mixer.music.play()
 					engine_luta(a,pokemon_escolhido)
 				elif pokemon_escolhido==2 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
+					pygame.mixer.music.pause()
+					pygame.mixer.music.load(file2)
+					pygame.mixer.music.play()	
 					engine_luta(a,pokemon_escolhido)
 				elif pokemon_escolhido==3 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
+					pygame.mixer.music.pause()
+					pygame.mixer.music.load(file2)
+					pygame.mixer.music.play()
 					engine_luta(a,pokemon_escolhido)
 				elif pokemon_escolhido==4 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
+					pygame.mixer.music.pause()
+					pygame.mixer.music.load(file2)
+					pygame.mixer.music.play()
 					engine_luta(a,pokemon_escolhido)
 				elif pokemon_escolhido==5 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
 					time.sleep(1)
 					pokemonb=True
+					pygame.mixer.music.pause()
+					pygame.mixer.music.load(file2)
+					pygame.mixer.music.play()
 					engine_luta(a,pokemon_escolhido)
 				elif pokemon_escolhido==6 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
@@ -113,12 +129,12 @@ while escolhab==False:
 		print('Pokebolas:{}'.format(inventario.pokebolas))
 		print('Pocoes de vida:{}'.format(inventario.pocao_vida))
 		for pokes in range(len(inventario.pokemons_capturados)):
-			if int(inventario.pokemons_capturados[pokes][2])<=0:
+			if int(inventario.pokemons_capturados[pokes][3])<=0:
 				vida=0
-			elif int(inventario.pokemons_capturados[pokes][2])<int((((int(inventario.pokemons_capturados[pokes][2])*2*level)/100))+level+10):
-				vida=int(inventario.pokemons_capturados[pokes][2])
+			elif int(inventario.pokemons_capturados[pokes][3])<int((((int(inventario.pokemons_capturados[pokes][3])*3*level)/100))+level+10):
+				vida=int(inventario.pokemons_capturados[pokes][3])
 			else:	
-				vida=int((((int(inventario.pokemons_capturados[pokes][2])*2*level)/100))+level+10)
+				vida=int((((int(inventario.pokemons_capturados[pokes][3])*2*level)/100))+level+10)
 			print('{}:{}'.format(inventario.pokemons_capturados[pokes][0],vida))
 		time.sleep (2)
 		os.system('cls')
