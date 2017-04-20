@@ -11,6 +11,7 @@ import random
 import pickle
 import pygame
 from tkinter import *
+from Levelling import level_up
 #Pickle vida temp
 #Saves
 os.system('cls')
@@ -70,7 +71,7 @@ while escolhab==False:
 			pokemon_escolhido=int(input("Escolha seu Pokemon: "))
 			os.system('cls')
 			if pokemon_escolhido <= len(inventario.pokemons_capturados):
-				chance=random.randint(0,100)
+				chance=random.randint(36,100)
 				a=(inventario.pokemons_capturados[pokemon_escolhido-1])
 				if pokemon_escolhido==1 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
@@ -136,7 +137,7 @@ while escolhab==False:
 				vida=int(inventario.pokemons_capturados[pokes][3])
 			else:	
 				vida=int((((int(inventario.pokemons_capturados[pokes][3])*2*level)/100))+level+10)
-			print('{}:{}'.format(inventario.pokemons_capturados[pokes][0],vida))
+			print('{} (Level:{}):{}'.format(inventario.pokemons_capturados[pokes][0],inventario.pokemons_capturados[pokes][1],vida))
 		time.sleep (2)
 		os.system('cls')
 	#PokeCenter

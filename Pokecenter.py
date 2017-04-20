@@ -11,7 +11,7 @@ def pokecenter():
 		else:
 			print('Inventario cheio')
 		for pokes in range(len(inventario.pokemons_capturados)):
-			level=1
+			level=int(inventario.pokemons_capturados[len(inventario.pokemons_capturados)-1][1])
 			if int(inventario.pokemons_capturados[pokes][3])<int((((int(inventario.pokemons_capturados[pokes][2])*2*level)/100))+level+10):
 				inventario.pokemons_capturados[pokes][3]=int((((int(inventario.pokemons_capturados[pokes][2])*2*level)/100))+level+10)
 				print('Vida dos pokemons restaurada!')	

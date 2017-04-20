@@ -1,5 +1,4 @@
-class a:
-	a=input("a")
-
-a.a
-print (a.a)	
+import random
+lista=[0,1,2,3]
+a= random.choice(lista)
+print(a)

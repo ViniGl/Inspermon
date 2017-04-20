@@ -1,23 +1,57 @@
 #Level
 from lista_de_pkm import pokemon as pkm
 from inventario import inventario
-def level(poke_lutador):
-	exp=pokemon_lutador[12]
-	if int(pokemon_lutador[1])<=15:
-		exp=exp+10
-		if exp>=10*int(pokemon_lutador[1]):
-			pokemon_lutador[1]=pokemon_lutador[1]+1
-			pokemon_lutador[12]=0
-		#Evolucao
+import time
+import os 
+from evolucao import evolucao
+def level_up(poke_lutador,n):
+	pkm_evolucao=poke_lutador
+	exp=[int(poke_lutador[8])]
+	#Level 1-10
+	if int(poke_lutador[1])<10:
+		exp.append(10)		
+		os.system('cls')
+		print ('{} ganhou 10 exp!'.format(poke_lutador[0]))
+		time.sleep(1)
+		soma=sum(exp)	
+	if soma>=10*int(poke_lutador[1]):
+	 	poke_lutador[1]=int(poke_lutador[1])+1
+	 	
+	 	#Evolucao 1
+	if int(poke_lutador[1])==10:
+		os.system('cls')
+		print('{} esta evoluindo!'.format(poke_lutador[0]))
+		time.sleep(2)
+		os.system('cls')
+		print('.	.	.')
+		time.sleep(2)
+		os.system('cls')
+		inventario.pokemons_capturados.pop(n-1)
+		inventario.pokemons_capturados.insert(n-1,evolucao(pkm_evolucao))
+		print('{} se transformou em {}'.format(poke_lutador[0],inventario.pokemons_capturados[n-1][0]))
+		time.sleep(2)
 
-	elif int(pokemon_lutador[1])<=30:
-		exp=exp+20
-		if exp>=10*int(pokemon_lutador[1]):
-			pokemon_lutador[1]=pokemon_lutador[1]+1
-			pokemon_lutador[12]=0
-		if pokemon_lutador[1]==30:
+	if int(poke_lutador[1])>=15:
+		exp.append(20)		
+		os.system('cls')
+		print ('{} ganhou 10 exp!'.format(poke_lutador[0]))
+		time.sleep(1)
+		soma=sum(exp)	
+	if soma>=5*int(poke_lutador[1]):
+	 	poke_lutador[1]=int(poke_lutador[1])+1
 
+	if int(poke_lutador[1])==17:
+		os.system('cls')
+		print('{} esta evoluindo!'.format(poke_lutador[0]))
+		time.sleep(2)
+		os.system('cls')
+		print('.	.	.')
+		time.sleep(2)
+		os.system('cls')
+		inventario.pokemons_capturados.pop(n-1)
+		inventario.pokemons_capturados.insert(n-1,evolucao(pkm_evolucao))
+		print('{} se transformou em {}'.format(poke_lutador[0],inventario.pokemons_capturados[n-1][0]))
+		time.sleep(2)
 
-			inventario.pokemons_capturados[valor_lista-1] 
-	elif int(pokemon_lutador[1])<=50:
-		exp=exp+35
+	if int(poke_lutador[1])==20:
+		int(poke_lutador[1])==20
