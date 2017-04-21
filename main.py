@@ -68,6 +68,7 @@ x=1
 escolhab=False
 pokemonb=False
 while escolhab==False:
+	Save12(inventario.pokemons_capturados)
 	pygame.mixer.music.unpause()
 	pokemonb=False
 	# oquefazer=input("{}, o que voce gostaria fazer? Andar, pokecenter, status ou dormir?".format(nome_jogador1))
@@ -83,7 +84,7 @@ while escolhab==False:
 			pokemon_escolhido=int(input("Escolha seu Pokemon: "))
 			os.system('cls')
 			if pokemon_escolhido <= len(inventario.pokemons_capturados):
-				chance=random.randint(36,100)
+				chance=random.randint(0,100)
 				a=(inventario.pokemons_capturados[pokemon_escolhido-1])
 				if pokemon_escolhido==1 and chance>=36:
 					print("{} foi escolhido".format(inventario.pokemons_capturados[pokemon_escolhido-1][0]))
@@ -150,18 +151,19 @@ while escolhab==False:
 			else:	
 				vida=int((((int(inventario.pokemons_capturados[pokes][3])*2*level)/100))+level+10)
 			print('{} (Level:{}):{}'.format(inventario.pokemons_capturados[pokes][0],inventario.pokemons_capturados[pokes][1],vida))
-		time.sleep (2)
+		time.sleep (3.5)
 		os.system('cls')
 	#PokeCenter
 	elif escolha=='pokecenter':
 		pokecenter()
-		time.sleep (1.5)
+		time.sleep (3.5)
 		os.system('cls')
 	#Dormir
 	elif escolha == "dormir":
 		print("Boa noite!")
 		time.sleep(1)
 		os.system('cls')
+		Save12(inventario.pokemons_capturados)
 		escolhab=True
 	
 	else:

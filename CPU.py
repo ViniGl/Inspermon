@@ -5,9 +5,9 @@ from ataques import ataques
 def CPU(pokemon_cpu,pokemon_jogador):
 	ataques()
 	if int(pokemon_jogador[1])<=5:
-		level_cpu=random.randint(1,5)
+		level_cpu=random.randrange(1,5)
 	elif int(pokemon_jogador[1])<=10:
-		level_cpu=random.randint(2,10)	
+		level_cpu=random.randint(5,10)	
 	elif int(pokemon_jogador[1])<=15:
 		level_cpu=random.randint(10,15)
 	elif int(pokemon_jogador[1])<=20:

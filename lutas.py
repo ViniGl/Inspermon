@@ -40,6 +40,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 	vida_cpu=int(CPU(pokemon_cpu,poke_lutador)[2])
 	defesa_cpu=int(CPU(pokemon_cpu,poke_lutador)[4])
 	ataque_cpu=int(CPU(pokemon_cpu,poke_lutador)[3])
+	level_cpu=int(CPU(pokemon_cpu,poke_lutador)[9])
 
 	if vida_jogador<=0:
 		os.system('cls')
@@ -50,31 +51,31 @@ def engine_luta(pokemon_lutador,valor_lista):
 	while vida_jogador>0 and vida_cpu>0:
 		os.system('cls')
 		print("{} (Level:{}) HP:{}".format(nome_pkm,level,vida_jogador))
-		print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],CPU(pokemon_cpu,poke_lutador)[9],vida_cpu))
+		print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],level_cpu,vida_cpu))
 		escolha=input('Lutar, curar, fugir ou capturar:').lower()
 		os.system('cls')
 		print("{} (Level:{}) HP:{}".format(nome_pkm,level,vida_jogador)) 
-		print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],CPU(pokemon_cpu,poke_lutador)[9],vida_cpu))
+		print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],level_cpu,vida_cpu))
 		
 		while escolha !='lutar' and escolha!='fugir' and escolha!='capturar' and escolha!='curar':
 			escolha=input('Lutar, curar, fugir ou capturar?')
 			os.system('cls')
 			print("{} (Level:{}) HP:{}".format(nome_pkm,level,vida_jogador))
-			print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],CPU(pokemon_cpu,poke_lutador)[9],vida_cpu))
+			print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],level_cpu,vida_cpu))
 		escolha.lower()
 		
 		if escolha=='lutar':
 			escolha_atk=input('Escolha seu ataque(1 a 4):')
 			os.system('cls')
 			print("{} (Level:{}) HP:{}".format(nome_pkm,level,vida_jogador))
-			print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],CPU(pokemon_cpu,poke_lutador)[9],vida_cpu))
+			print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],level_cpu,vida_cpu))
 			os.system('cls')
 			
 			while escolha_atk!='1' and escolha_atk!='2' and escolha_atk!='3'and escolha_atk!='4':
 					escolha_atk=int(input('Escolha seu ataque(1 a 4):'))
 					os.system('cls')
 					print("{} (Level:{}) HP:{}".format(nome_pkm,level,vida_jogador))
-					print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],CPU(pokemon_cpu,poke_lutador)[9],vida_cpu))
+					print('{} (Level:{}) HP:{}'.format(CPU(pokemon_cpu,poke_lutador)[1],level_cpu,vida_cpu))
 		
 			if escolha_atk=='1':
 				escolha_atk=pokemon_lutador[9]
