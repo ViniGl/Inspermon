@@ -32,6 +32,12 @@ def Save12(jogo_obj):
 	jogo_string=json.dumps(a)
 	file.write(jogo_string.encode())
 	file.close()
+def Save13(insperdex):
+	a=insperdex
+	file = open('insperdex.json','wb')
+	jogo_string=json.dumps(a)
+	file.write(jogo_string.encode())
+	file.close()
 
 def LendoSave():
 	file = open('nome.json' , 'rb')
@@ -41,3 +47,11 @@ def LendoSave():
 	obj= json.loads(datanova)
 	file.close()
 	return obj
+def dex_load():
+	file = open('insperdex.json' , 'rb')
+	data_total = file.readline()
+	data_nova= data_total
+	datanova=data_nova.decode()
+	obj= json.loads(datanova)
+	file.close()
+	return obj	

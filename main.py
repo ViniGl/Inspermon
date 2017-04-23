@@ -12,9 +12,8 @@ import pickle
 import pygame
 from tkinter import *
 from Levelling import level_up
-from FuncaoSave import Save12
-from FuncaoSave import LendoSave
-
+from FuncaoSave import Save12,LendoSave,Save13,dex_load
+from Insperdex import insperdex
 #Pickle vida temp
 #Saves
 os.system('cls')
@@ -25,54 +24,60 @@ os.system('cls')
 # 		nomes_salvos.jogadores_totais+=1
 
 #musica		
-# file = 'pkmsong1.mp3'
+file = 'pkmsong1.mp3'
 file2='pkmfight.mp3'
-# root = Tk()
-# pygame.mixer.init()
-# pygame.mixer.music.load(file)
-# pygame.mixer.music.play()
-# root.mainloop()
+root = Tk()
+pygame.mixer.init()
+pygame.mixer.music.load(file)
+pygame.mixer.music.play()
+root.mainloop()
 
 inventario()
-# fazeroq=int(input("Continuar jogo salvo (1) ou comecar novo jogo(2)?"))
-# if fazeroq==2:
-# 	os.remove('nome.json')
-# 	nome_jogador=input("Qual o seu nome treinador pokemon? ")
-# 	nome_jogador1=nome_jogador.title()
-# 	os.system('cls')
-# 	print("Seja Bem Vindo {}, pronto para se tornar o treinador pokemon mais respeitado da historia?".format(nome_jogador1))
-# 	time.sleep(4)
-# 	os.system('cls')
-# 	print("Agora vamos comecar a nossa dura jornada pelo mundo dos InsperMons!")
-# 	time.sleep(4)
-# 	os.system('cls')
-# 	print ('{}  (1)\n{}  (2)\n{}  (3)' .format(pkm[0][0],pkm[3][0],pkm[6][0]))
-# 	pokemon_inicial=int(input('Escolha seu primeiro pokemon:'))
-# 	if pokemon_inicial==1:
-# 		pokemon_inicial=0
-# 	elif pokemon_inicial==2:
-# 		pokemon_inicial=3
-# 	elif pokemon_inicial==3:
-# 		pokemon_inicial=6
-# 	pokemons_capturados=[]
-# 	inventario.pokemons_capturados.append(pkm[pokemon_inicial])
-# 	Save12(inventario.pokemons_capturados)
-# 	inventario.pokebolas=7
-# 	os.system('cls')
-# if fazeroq==1:
-# 	inventario.pokemons_capturados.append(LendoSave())
-# 	print("Seja Bem Vindo de Volta")
-# 	time.sleep(2)
+fazeroq=int(input("Continuar jogo salvo (1) ou comecar novo jogo(2)?"))
+if fazeroq==2:
+	os.system('cls')
+	os.remove('nome.json')
+	os.remove('insperdex.json')
+	nome_jogador=input("Qual o seu nome treinador pokemon? ")
+	nome_jogador1=nome_jogador.title()
+	os.system('cls')
+	print("Seja Bem Vindo {}, pronto para se tornar o treinador pokemon mais respeitado da historia?".format(nome_jogador1))
+	time.sleep(4)
+	os.system('cls')
+	print("Agora vamos comecar a nossa dura jornada pelo mundo dos InsperMons!")
+	time.sleep(4)
+	os.system('cls')
+	print ('{}  (1)\n{}  (2)\n{}  (3)' .format(pkm[0][0],pkm[3][0],pkm[6][0]))
+	pokemon_inicial=int(input('Escolha seu primeiro pokemon:'))
+	if pokemon_inicial==1:
+		pokemon_inicial=0
+	elif pokemon_inicial==2:
+		pokemon_inicial=3
+	elif pokemon_inicial==3:
+		pokemon_inicial=6
+	pokemons_capturados=[]
+	inventario.pokemons_capturados.append(pkm[pokemon_inicial])
+	insperdex.pkm_encontrados.append(pkm[pokemon_inicial])
+	Save12(inventario.pokemons_capturados)
+	inventario.pokebolas=7
+	os.system('cls')
+if fazeroq==1:
+	os.system('cls')
+	pokemons_capturados=LendoSave()
+	insperdex.pkm_encontrados=dex_load()
+	print("Seja Bem Vindo de Volta")
+	time.sleep(2)
+	os.system('cls')
 #Loop da parte principal
 x=1
 escolhab=False
 pokemonb=False
 while escolhab==False:
 	Save12(inventario.pokemons_capturados)
+	Save13(insperdex.pkm_encontrados)
 	pygame.mixer.music.unpause()
 	pokemonb=False
-	# oquefazer=input("{}, o que voce gostaria fazer? Andar, pokecenter, status ou dormir?".format(nome_jogador1))
-	oquefazer=input("o que voce gostaria fazer? Andar, pokecenter, status ou dormir?")
+	oquefazer=input("O que voce gostaria fazer? Andar, pokecenter, insperdex, status ou dormir?")
 	os.system('cls')
 	escolha=oquefazer.lower()
 	if escolha == "andar":
@@ -165,7 +170,13 @@ while escolhab==False:
 		os.system('cls')
 		Save12(inventario.pokemons_capturados)
 		escolhab=True
-	
+
+	elif escolha=="insperdex":
+		print("Pokemons encontrados:\n")
+		for i in range (len(insperdex.pkm_encontrados)):
+			print('Pokemon:{} HP:{} Atk:{} Def:{} Tipo:{}'.format(insperdex.pkm_encontrados[i][0],int((((int(insperdex.pkm_encontrados[i][2])*2*int(insperdex.pkm_encontrados[i][1]))/100))+int(insperdex.pkm_encontrados[i][1])+10),insperdex.pkm_encontrados[i][4],insperdex.pkm_encontrados[i][5],insperdex.pkm_encontrados[i][6]))
+		time.sleep(6)	
+		os.system('cls')
 	else:
 		escolhab=False
 

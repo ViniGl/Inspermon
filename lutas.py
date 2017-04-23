@@ -7,6 +7,7 @@ import time
 from inventario import inventario
 import pygame
 from Levelling import level_up
+from Insperdex import insperdex
 #Falta o level
 def engine_luta(pokemon_lutador,valor_lista):
 	#Parametros
@@ -41,6 +42,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 	defesa_cpu=int(CPU(pokemon_cpu,poke_lutador)[4])
 	ataque_cpu=int(CPU(pokemon_cpu,poke_lutador)[3])
 	level_cpu=int(CPU(pokemon_cpu,poke_lutador)[9])
+	insperdex.pkm_encontrados.append(pokemon_cpu)
 
 	if vida_jogador<=0:
 		os.system('cls')
