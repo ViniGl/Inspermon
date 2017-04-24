@@ -1,4 +1,5 @@
 #cpu
+#
 from lista_de_pkm import pokemon as pkm
 import random
 from ataques import ataques
