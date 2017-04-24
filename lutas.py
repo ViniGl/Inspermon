@@ -133,7 +133,7 @@ def engine_luta(pokemon_lutador,valor_lista):
 		if escolha=='capturar':
 			if inventario.pokebolas<=0:
 				print('Voce nao possui pokebolas')
-			a=random.randrange(0,20,1)
+			a=random.randrange(0,100,1)
 			
 			if a<=20 and a>=0:
 				os.system('cls')
