@@ -63,7 +63,7 @@ if fazeroq==2:
 	os.system('cls')
 if fazeroq==1:
 	os.system('cls')
-	pokemons_capturados=LendoSave()
+	inventario.pokemons_capturados=LendoSave()
 	insperdex.pkm_encontrados=dex_load()
 	print("Seja Bem Vindo de Volta")
 	time.sleep(2)
@@ -145,10 +145,10 @@ while escolhab==False:
 		escolhab=False
 	#Status
 	elif escolha=='status':
-		level=1
 		print('Pokebolas:{}'.format(inventario.pokebolas))
 		print('Pocoes de vida:{}'.format(inventario.pocao_vida))
 		for pokes in range(len(inventario.pokemons_capturados)):
+			level=int(inventario.pokemons_capturados[pokes][1])
 			if int(inventario.pokemons_capturados[pokes][3])<=0:
 				vida=0
 			elif int(inventario.pokemons_capturados[pokes][3])<int((((int(inventario.pokemons_capturados[pokes][3])*3*level)/100))+level+10):

@@ -47,6 +47,7 @@ def LendoSave():
 	obj= json.loads(datanova)
 	file.close()
 	return obj
+
 def dex_load():
 	file = open('insperdex.json' , 'rb')
 	data_total = file.readline()

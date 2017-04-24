@@ -14,7 +14,7 @@ def level_up(poke_lutador,n):
 		print ('{} ganhou 10 exp!'.format(poke_lutador[0]))
 		time.sleep(1)
 		soma=sum(exp)	
-	if soma>=10*int(poke_lutador[1]):
+	if soma>=10:
 	 	poke_lutador[1]=int(poke_lutador[1])+1
 	 	
 	 	#Evolucao 1
@@ -37,7 +37,7 @@ def level_up(poke_lutador,n):
 		print ('{} ganhou 10 exp!'.format(poke_lutador[0]))
 		time.sleep(1)
 		soma=sum(exp)	
-	if soma>=5*int(poke_lutador[1]):
+	if soma>=10:
 	 	poke_lutador[1]=int(poke_lutador[1])+1
 
 	if int(poke_lutador[1])==17:
